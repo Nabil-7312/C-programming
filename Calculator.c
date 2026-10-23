@@ -7,7 +7,7 @@ int main()
     scanf("%d",&a);
     printf("Enter b:");
     scanf("%d",&b);
-    printf("Enter Operator:");
+    printf("Enter Operator[+,-,*,/]:");
     scanf("%c",&op);
     switch(op){
         case '+':
