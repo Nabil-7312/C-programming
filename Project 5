@@ -1,0 +1,55 @@
+#include <stdio.h>
+void main()
+{
+    FILE *fp;
+    char name[300];
+
+    // 1. Writing data into file
+    fp = fopen("feedback.txt", "w");
+
+    if (fp == NULL)
+    {
+        printf("File cannot be opened");
+        return;
+    }
+
+    fprintf(fp, "Before Arrival of you many sir are changed.");
+    fclose(fp);
+
+    printf("Data written successfully\n");
+
+
+    // 2. Appending data into file
+    fp = fopen("feedback.txt", "a");
+
+    if (fp == NULL)
+    {
+        printf("File cannot be opened");
+        return;
+    }
+
+    fprintf(fp, "\nI Understand the theory part but i don't know how to make it as a coding");
+
+    fclose(fp);
+
+    printf("Data appended successfully\n");
+
+
+    // 3. Reading data from file
+    fp = fopen("feedback.txt", "r");
+
+    if (fp == NULL)
+    {
+        printf("File cannot be opened");
+        return;
+    }
+
+    printf("\nFile Contents:\n");
+
+    while (fgets(name, sizeof(name), fp) != NULL)
+    {
+        printf("%s", name);
+    }
+
+    fclose(fp);
+}
